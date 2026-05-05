@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getInventory } from "../services/inventoryApi";
 import InventoryGallery from "../components/gallery/InventoryGallery";
-
 export default function Gallery() {
     const [items, setItems] = useState([]);
     const navigate = useNavigate();
