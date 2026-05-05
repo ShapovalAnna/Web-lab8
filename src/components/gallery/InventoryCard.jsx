@@ -32,14 +32,12 @@ const card = {
     position: "relative",
     transition: "0.2s",
 };
-
 const img = {
     width: "100%",
     height: "180px",
     objectFit: "cover",
     borderRadius: "8px",
 };
-
 const title = {
     marginTop: "10px",
     textAlign: "center",
@@ -47,7 +45,6 @@ const title = {
     fontSize: "16px",
     fontWeight: "500",
 };
-
 const favBtn = {
     position: "absolute",
     top: "10px",
