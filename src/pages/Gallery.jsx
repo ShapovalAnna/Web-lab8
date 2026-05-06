@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getInventory } from "../services/inventoryApi";
 import InventoryGallery from "../components/gallery/InventoryGallery";
+
 export default function Gallery() {
     const [items, setItems] = useState([]);
     const navigate = useNavigate();
@@ -12,33 +13,31 @@ export default function Gallery() {
 
     return (
         <div>
-
-            {/*  HEADER */}
+            {/* 🔝 HEADER */}
             <div style={topBar}>
+                {/* пустий блок для центрування */}
+                <div style={{ width: "120px" }} />
 
-                {/*  ГАЛЕРЕЯ */}
+                {/* заголовок по центру */}
                 <h1 style={title}>Gallery</h1>
-                {/* ПРАВА ЧАСТИНА */}
-                <div style={{ display: "flex", gap: "10px" }}>
-                    <button
-                        onClick={() => navigate("/favorites")}
-                        style={favBtn}
-                    >
-                        Favorites
-                    </button>
-                </div>
 
+                {/* кнопка справа */}
+                <button
+                    onClick={() => navigate("/favorites")}
+                    style={favBtn}
+                >
+                    Favorites
+                </button>
             </div>
 
-
-
+            {/* 📦 ГАЛЕРЕЯ */}
             <InventoryGallery items={items} />
         </div>
     );
 }
 
 //
-//  СТИЛІ
+// 🎨 СТИЛІ
 //
 
 const topBar = {
@@ -48,25 +47,16 @@ const topBar = {
     background: "#16171d",
     padding: "15px 30px",
     display: "flex",
-    justifyContent: "space-between",
     alignItems: "center",
-};
-
-const tableBtn = {
-    background: "#3b82f6",
-    color: "white",
-    padding: "12px 24px",
-    borderRadius: "12px",
-    border: "none",
-    cursor: "pointer",
-    fontSize: "16px",
+    justifyContent: "space-between",
 };
 
 const title = {
-    textAlign: "center",
     color: "white",
-    marginTop: "20px",
+    fontSize: "28px",
+    fontWeight: "600",
 };
+
 const favBtn = {
     background: "#ec4899",
     color: "white",

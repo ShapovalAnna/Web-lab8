@@ -5,7 +5,10 @@ export default function InventoryCard({ item, onOpen }) {
 
     return (
         <div style={card} onClick={() => onOpen(item)}>
-            <img src={item.photo} style={img} />
+            <img
+                src={item.photo}
+                style={img}
+            />
 
             <div style={title}>
                 {item.inventory_name}
