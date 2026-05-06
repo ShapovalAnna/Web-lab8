@@ -12,7 +12,7 @@ export default function Favorites() {
             {/*  HEADER */}
             <div style={topBar}>
                 <button
-                    onClick={() => navigate("/gallery")}
+                    onClick={() => navigate("/")}
                     style={backBtn}
                 >
                     Go back
@@ -21,8 +21,6 @@ export default function Favorites() {
                 <h1 style={title}>Favorites</h1>
 
             </div>
-
-
 
             <InventoryGallery items={favorites} />
         </div>

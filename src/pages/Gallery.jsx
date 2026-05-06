@@ -13,7 +13,7 @@ export default function Gallery() {
 
     return (
         <div>
-            {/* 🔝 HEADER */}
+            {/*  HEADER */}
             <div style={topBar}>
                 {/* пустий блок для центрування */}
                 <div style={{ width: "120px" }} />
@@ -30,15 +30,12 @@ export default function Gallery() {
                 </button>
             </div>
 
-            {/* 📦 ГАЛЕРЕЯ */}
+            {/*  ГАЛЕРЕЯ */}
             <InventoryGallery items={items} />
         </div>
     );
 }
 
-//
-// 🎨 СТИЛІ
-//
 
 const topBar = {
     position: "sticky",
@@ -52,9 +49,11 @@ const topBar = {
 };
 
 const title = {
+    position: "absolute",
+    left: "50%",
+    transform: "translateX(-50%)",
     color: "white",
-    fontSize: "28px",
-    fontWeight: "600",
+    margin: 0,
 };
 
 const favBtn = {

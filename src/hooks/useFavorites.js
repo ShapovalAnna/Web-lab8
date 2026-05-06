@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 export default function useFavorites() {
     const [favorites, setFavorites] = useState([]);
 
-    // 🔹 1. Завантаження з localStorage
+    // Завантаження з localStorage
     useEffect(() => {
         const saved = JSON.parse(localStorage.getItem("favorites")) || [];
         setFavorites(saved);
     }, []);
 
-    // 🔹 2. Додавання / видалення
+    //  Додавання / видалення
     const toggle = (item) => {
         let updated;
 
@@ -23,7 +23,7 @@ export default function useFavorites() {
         localStorage.setItem("favorites", JSON.stringify(updated));
     };
 
-    // 🔹 3. Перевірка
+    // Перевірка
     const isFavorite = (id) => {
         return favorites.some(f => f.id === id);
     };

@@ -54,6 +54,6 @@ const favBtn = {
     right: "10px",
     background: "none",
     border: "none",
-    fontSize: "20px",
+    fontSize: "30px",
     cursor: "pointer",
 };

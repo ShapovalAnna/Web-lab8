@@ -47,7 +47,7 @@ const modal = {
 const img = {
     width: "80%",
     height: "250px",
-    objectFit: "cover",
+    objectFit: "contain",
     marginBottom: "10px",
 };
 
