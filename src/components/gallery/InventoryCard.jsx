@@ -1,12 +1,34 @@
+import { useState } from "react";
 import useFavorites from "../../hooks/useFavorites";
 
 export default function InventoryCard({ item, onOpen }) {
+
     const { toggle, isFavorite } = useFavorites();
 
+    const [hovered, setHovered] = useState(false);
+
     return (
-        <div style={card} onClick={() => onOpen(item)}>
+        <div
+            style={{
+                ...card,
+
+                transform: hovered
+                    ? "scale(1.03)"
+                    : "scale(1)",
+
+                boxShadow: hovered
+                    ? "0 10px 25px rgba(0,0,0,0.25)"
+                    : "0 4px 10px rgba(0,0,0,0.1)",
+            }}
+
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+
+            onClick={() => onOpen(item)}
+        >
             <img
                 src={item.photo}
+                alt={item.inventory_name}
                 style={img}
             />
 
@@ -19,9 +41,12 @@ export default function InventoryCard({ item, onOpen }) {
                     e.stopPropagation();
                     toggle(item);
                 }}
+
                 style={favBtn}
             >
-                {isFavorite(item.id) ? "❤️" : "🤍"}
+                {isFavorite(item.id)
+                    ? "❤️"
+                    : "🤍"}
             </button>
         </div>
     );
@@ -33,14 +58,16 @@ const card = {
     borderRadius: "12px",
     cursor: "pointer",
     position: "relative",
-    transition: "0.2s",
+    transition: "0.2s ease",
 };
+
 const img = {
     width: "100%",
     height: "180px",
     objectFit: "cover",
     borderRadius: "8px",
 };
+
 const title = {
     marginTop: "10px",
     textAlign: "center",
@@ -48,6 +75,7 @@ const title = {
     fontSize: "16px",
     fontWeight: "500",
 };
+
 const favBtn = {
     position: "absolute",
     top: "10px",
